@@ -47,6 +47,3 @@ Run prediction with:
 ```
 python classiferTest.py
 ```
-
-Make sure your input image is white digits on a black background for best results.
-
