@@ -3,8 +3,6 @@ import torch.nn as nn
 import torch.optim as optim
 from torchvision import datasets, transforms
 
-if torch.cuda.is_available():
-    print("gpu works")
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -17,7 +15,7 @@ test_set = datasets.MNIST(root='./data', train=False, download=True, transform=t
 train_loader = torch.utils.data.DataLoader(train_set, batch_size=64, shuffle=True)
 test_loader = torch.utils.data.DataLoader(test_set, batch_size=1000)
 
-# Simple model
+
 model = nn.Sequential(
     nn.Flatten(),
     nn.Linear(28*28, 128),
@@ -37,7 +35,7 @@ for images, labels in train_loader:
     loss.backward()
     optimizer.step()
 
-# Testing
+# tests model
 correct = 0
 total = 0
 with torch.no_grad():
