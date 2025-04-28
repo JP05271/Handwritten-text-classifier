@@ -1,0 +1,5 @@
+# Ignore the MNIST dataset files
+/data/
+
+# Ignore model checkpoints
+*.pth
